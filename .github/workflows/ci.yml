@@ -38,7 +38,7 @@ jobs:
 
       # 6. Build Docker Image
       - name: Build Docker
-        run: docker build -t app .
+        run: docker build -t nodejsapp:1.0 .
 
       - name: Scan Docker Image
         uses: aquasecurity/trivy-action@v0.20.0
@@ -59,6 +59,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/app
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/nodejsapp:1.0
 
-          
+
