@@ -9,19 +9,36 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
+      # 1. Checkout code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      # 2. Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 18
+      
+      # 3. Install dependencies
+      - name: Install dependencies
+        run: npm install
 
-      - run: npm install
+      # 4. Run Test
+      - name: Run Test
+        run: npm test
 
+      # 5. Build application
+      - name: Build app
+        run: npm run build
+      
+      # 6. Run npm audit
       - name: Run npm audit
         run: npm audit --audit-level=high
 
+
+      # 6. Build Docker Image
       - name: Build Docker
-        run: docker build -t app .
+        run: docker build -t nodejsapp:1.0 .
 
       - name: Scan Docker Image
         uses: aquasecurity/trivy-action@v0.20.0
