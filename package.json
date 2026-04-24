@@ -1,7 +1,11 @@
 {
-  "name": "node-utility",
+  "name": "simple-node-app",
   "version": "1.0.0",
+  "description": "Simple Node.js Hello World app",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Running Node.js tests...\" && exit 0"
+    "start": "node app.js",
+    "build": "echo \"No build step required\"",
+    "test": "echo \"No tests yet\""
   }
 }
