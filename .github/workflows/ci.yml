@@ -43,7 +43,7 @@ jobs:
       - name: Scan Docker Image
         uses: aquasecurity/trivy-action@v0.20.0
         with:
-          image-ref: app
+          image-ref: nodejsapp:1.0
           severity: HIGH,CRITICAL
 
       # 7. Login to Docker Hub
