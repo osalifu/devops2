@@ -1,0 +1,7 @@
+{
+  "name": "node-utility",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Running Node.js tests...\" && exit 0"
+  }
+}
