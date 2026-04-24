@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: 18
 
-      - run: npm ci
+      - run: npm install
 
       - name: Run npm audit
         run: npm audit --audit-level=high
